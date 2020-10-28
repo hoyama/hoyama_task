@@ -1,14 +1,14 @@
 @if (count($errors) > 0)
-    <div>
-        <P>
-            <b>[エラー内容]</b>
-        </P>
-        <ul>
-            @foreach($errors->all() as $error)
-                <li>{{ $error}}</li>
-            @endforeach
-        </ul>
-    </div>
+<div>
+    <P>
+        <b>[エラー内容]</b>
+    </P>
+    <ul>
+        @foreach($errors->all() as $error)
+        <li>{{ $error}}</li>
+        @endforeach
+    </ul>
+</div>
 @endif
 <h1>タスク一覧</h1>
 
@@ -20,14 +20,14 @@
         <li style="list-style: none;">
             <a href="/tasks/{{ $task->id }}">{{ $task->title }}</a>
         </li>
-        </form>
+    </form>
     <form action ="/tasks/{{ $task->id }}" method="post">
         @csrf
         @method('DELETE')
         <input type="submit" value="削除する" onclick="if(!confirm('削除しますか？')){return false};">
-        </div>
-        </form>
-        @endforeach
+    </div>
+</form>
+@endforeach
 
 {{-- <input type="submit" value="新規論文投稿"> --}}
 {{-- <a href="/tasks/{{ $task->id }}/"><button>新規論文投稿</button></a> --}}
@@ -50,7 +50,7 @@
     </p>
     
     <input type="string" name="title"  value ="{{ old('title') }}";><br>
-
+    
     <p>
         <b>本文</b>
     </p>
