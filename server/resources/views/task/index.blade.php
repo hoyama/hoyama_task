@@ -1,8 +1,8 @@
-@if (count($errors) > 0)
 <div>
     <P>
         <b>[エラー内容]</b>
     </P>
+    @if (count($errors) > 0)
     <ul>
         @foreach($errors->all() as $error)
         <li>{{ $error}}</li>
