@@ -14,10 +14,6 @@ class TaskController extends Controller
         $tasks = Task::all();
         return view('task.index', ['tasks'=> $tasks]);
     }
-    public function create()
-    {
-        return view('task.create');
-    }
     public function store(TaskRequest $request)
     {
         $task = new Task;

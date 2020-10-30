@@ -27,6 +27,4 @@
     <input type="submit" value="更新">
 </form>
 
- <a href="/tasks/{{ $task->id }}"><button>詳細に戻る</button></a>
-
-    {{-- <input type="submit" value="削除する" onclick="if(!confirm('削除しますか？')){return false};"> --}}
+<a href="/tasks/{{ $task->id }}"><button>詳細に戻る</button></a>

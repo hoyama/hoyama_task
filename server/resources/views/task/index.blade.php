@@ -13,14 +13,13 @@
 <h1>タスク一覧</h1>
 
 
-@foreach ($tasks as $task)
-<form action="/tasks" method="post">
+@foreach ( $tasks as $task )
     @csrf
     <div style="display:inline-flex">
         <li style="list-style: none;">
             <a href="/tasks/{{ $task->id }}">{{ $task->title }}</a>
         </li>
-    </form>
+
     <form action ="/tasks/{{ $task->id }}" method="post">
         @csrf
         @method('DELETE')
@@ -29,17 +28,7 @@
 </form>
 @endforeach
 
-{{-- <input type="submit" value="新規論文投稿"> --}}
-{{-- <a href="/tasks/{{ $task->id }}/"><button>新規論文投稿</button></a> --}}
-{{-- <a href="/articles/create">投稿する</a> --}}
 <hr>
-
-
-
-
-
-
-
 
 <h1>新規論文投稿</h1>
 
@@ -58,6 +47,5 @@
     <textarea name="body"  value ="{{ old('body') }}";></textarea>
     <br>
     <input type="submit" value="Create task" >
-    {{-- value ="{{old('')}}" --}}
-    {{-- <input type="submit" value="削除する" onclick="if(!confirm('削除しますか？')){return false};"> --}}
+
 </form>
